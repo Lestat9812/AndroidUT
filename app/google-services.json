@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "131038337712",
+    "project_id": "utbus-ca20a",
+    "storage_bucket": "utbus-ca20a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131038337712:android:d6a1a0859e3a358c5fb975",
+        "android_client_info": {
+          "package_name": "com.example.utbus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131038337712-ibj6toq5t8hie0ra40e5qcihi8qg8aal.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.utbus",
+            "certificate_hash": "6aef60eb1596488895c4340d690d29ca82f5ec62"
+          }
+        },
+        {
+          "client_id": "131038337712-m8rgkqh0vmsglcvhllmqof227kno68b2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB21G_tVI0AoNeEXlcKRo4BKD4j7H74BKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131038337712-m8rgkqh0vmsglcvhllmqof227kno68b2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
