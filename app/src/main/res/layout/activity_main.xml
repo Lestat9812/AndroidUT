@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
-            android:layout_margin="40dp"
+            android:layout_margin="30dp"
             android:orientation="horizontal">
 
             <Button
@@ -45,7 +45,7 @@
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/white"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="4dp"
                 android:text="SOY CONDUCTOR"/>
 
             <Button

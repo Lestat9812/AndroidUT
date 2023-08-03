@@ -10,9 +10,11 @@ import android.widget.Button;
 
 public class selecOptionAuthActivity extends AppCompatActivity {
 
-    Toolbar mToolbar;
-   Button mButtonGoToLogin;
+    Button mButtonGoToLogin;
 
+    Button mButtonGoToRegister;
+
+    Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +25,29 @@ public class selecOptionAuthActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Seleccionar una opcion");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mButtonGoToLogin = findViewById(R.id.btnLogin);
-        //mButtonGoToLogin.setOnClickListener(view -> goToLogin());
-
+        mButtonGoToLogin = findViewById(R.id.btnGoToLogin);
+        mButtonGoToRegister = findViewById(R.id.btnGoToRegister);
+        mButtonGoToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToLogin();
+            }
+        });
+        mButtonGoToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToRegister();
+            }
+        });
 
     }
 
-    public void goToLogin() {
-       Intent intent = new Intent(selecOptionAuthActivity.this, LoginActivity.class);
+   public void goToLogin (){
+        Intent intent = new Intent(selecOptionAuthActivity.this, LoginActivity.class);
+        startActivity(intent);
+   }
+    public void goToRegister (){
+        Intent intent = new Intent(selecOptionAuthActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 }

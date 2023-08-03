@@ -2,7 +2,9 @@ package com.example.utbus;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,14 +23,20 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText mTextInputEmail;
     TextInputEditText mTextInputPassword;
     Button mButtonLogin;
-
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
+    Toolbar mToolbar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Login");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mTextInputEmail = findViewById(R.id.textInputEmail);
         mTextInputPassword = findViewById(R.id.textInputPasword);
@@ -36,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             String email = mTextInputEmail.getText().toString();
             String password = mTextInputPassword.getText().toString();
 
-            if (!email.isEmpty()&& password.isEmpty()){
+            if (!email.isEmpty() && !password.isEmpty()){
                 if (password.length() >= 6){
                     mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -63,6 +70,13 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
+                else {
+                    Toast.makeText(this, "La contraseña debe ser mayor a 6 digitos", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+            else {
+                Toast.makeText(this, "La contraseña y el email son obligatorios", Toast.LENGTH_SHORT).show();
             }
     }
 }
