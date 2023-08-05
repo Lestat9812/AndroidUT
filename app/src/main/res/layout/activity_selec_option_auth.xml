@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/verde1"
-    tools:context=".selecOptionAuthActivity">
+    tools:context=".Activities.selecOptionAuthActivity">
 
   <include layout="@layout/action_bar_toollbar" />
 

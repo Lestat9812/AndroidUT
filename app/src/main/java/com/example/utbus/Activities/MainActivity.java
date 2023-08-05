@@ -1,12 +1,13 @@
-package com.example.utbus;
+package com.example.utbus.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import com.example.utbus.R;
 
 public class MainActivity extends AppCompatActivity {
     Button mButtonIAmStudent;
@@ -26,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         mButtonIAmDriver = findViewById(R.id.btnIAmDriver);
 
         mButtonIAmStudent.setOnClickListener(view -> {
-            editor.putString("user", "Estudiante");
+            editor.putString("user", "client");
             editor.apply();
             goToSelectAuth();
         });
         mButtonIAmDriver.setOnClickListener(view -> {
-            editor.putString("user", "Conductor");
+            editor.putString("user", "driver");
             editor.apply();
             goToselectAuth();
         });

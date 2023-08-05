@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".RegisterActivity">
+    tools:context=".Activities.client.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="180dp"
-            android:src="@drawable/baseline_airport_shuttle_24"
+            android:src="@drawable/baseline_account_circle_24"
             android:layout_marginTop="60dp"
             android:layout_gravity="center"
             />
@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrate"
+            android:text="Registro Estudiante"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:layout_marginTop="15dp"

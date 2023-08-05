@@ -1,4 +1,4 @@
-package com.example.utbus;
+package com.example.utbus.Activities.client;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.utbus.R;
 import com.example.utbus.models.Client;
-import com.example.utbus.models.User;
 import com.example.utbus.providers.AuthProvider;
 import com.example.utbus.providers.Clientprovider;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,12 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    SharedPreferences mPref;
 
     AuthProvider mAuthProvider;
     Clientprovider mClientProvider;
@@ -42,7 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
         mAuthProvider = new AuthProvider();
         mClientProvider = new Clientprovider();
 
-        mPref = getApplicationContext().getSharedPreferences("typeUser", MODE_PRIVATE);
 
         mButtonRegister = findViewById(R.id.btnRegister);
         mTextInputEmail = findViewById(R.id.textInputEmail);
