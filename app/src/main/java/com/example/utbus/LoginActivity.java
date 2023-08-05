@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Login");
@@ -60,9 +61,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (password.length() >= 6){
                     mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                        public void onComplete(@NonNull Task <AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "El ingreso fue exitoso", Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 Toast.makeText(LoginActivity.this, "El email o contraseña son incorrectos", Toast.LENGTH_SHORT).show();

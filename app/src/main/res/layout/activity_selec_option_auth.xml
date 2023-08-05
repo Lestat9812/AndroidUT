@@ -15,7 +15,8 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
-      android:gravity="center">
+      android:gravity="center"
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
     <ImageView
         android:layout_width="150dp"
