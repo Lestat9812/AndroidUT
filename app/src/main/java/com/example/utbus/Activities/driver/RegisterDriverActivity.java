@@ -3,6 +3,7 @@ package com.example.utbus.Activities.driver;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -96,7 +97,10 @@ public class RegisterDriverActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(RegisterDriverActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(RegisterDriverActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegisterDriverActivity.this, MapDriverActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(RegisterDriverActivity.this, "No se pudo crear el cliente", Toast.LENGTH_SHORT).show();

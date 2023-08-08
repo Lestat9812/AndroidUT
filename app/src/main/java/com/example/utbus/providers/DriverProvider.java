@@ -8,7 +8,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DriverProvider {
 
     DatabaseReference mDatabase;
-    public void Driverprovider(){
+    public void DriverProvider(){
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers");
     }
 

@@ -15,6 +15,17 @@
         android:theme="@style/Theme.UTBus"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.driver.MapDriverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.client.MapClientActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBs97lvclJEx6qqrKnS2fOtQoqto-JF7to" />
+
+        <activity
             android:name=".Activities.driver.RegisterDriverActivity"
             android:exported="false" />
         <activity

@@ -3,12 +3,15 @@ package com.example.utbus.Activities.client;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.utbus.Activities.driver.MapDriverActivity;
+import com.example.utbus.Activities.driver.RegisterDriverActivity;
 import com.example.utbus.R;
 import com.example.utbus.models.Client;
 import com.example.utbus.providers.AuthProvider;
@@ -92,7 +95,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                if (task.isSuccessful()){
-                   Toast.makeText(RegisterActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                   //Toast.makeText(RegisterActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent(RegisterActivity.this, MapClientActivity.class);
+                   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                   startActivity(intent);
                }
                else {
                    Toast.makeText(RegisterActivity.this, "No se pudo crear el cliente", Toast.LENGTH_SHORT).show();
