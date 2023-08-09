@@ -7,6 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context=".Activities.driver.MapDriverActivity">
 
+    <include layout="@layout/action_bar_toollbar"></include>
 
     <fragment
         android:id="@+id/map"
