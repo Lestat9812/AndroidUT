@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <TextView
+        android:id="@+id/text_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="85dp"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="383dp"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="391dp"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="565dp"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="565dp"
+        tools:src="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="3"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="308dp" />
+
+    <WebView
+        android:layout_width="210dp"
+        android:layout_height="93dp"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="252dp">
+
+        <SearchView
+            android:layout_width="198dp"
+            android:layout_height="141dp"
+            android:layout_x="-2dp"
+            android:layout_y="227dp">
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="110dp"
+                android:layout_height="127dp" />
+        </SearchView>
+    </WebView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
