@@ -15,6 +15,7 @@ import com.example.utbus.Activities.client.MapClientActivity;
 import com.example.utbus.Activities.client.RegisterActivity;
 import com.example.utbus.Activities.driver.MapDriverActivity;
 import com.example.utbus.R;
+import com.example.utbus.includes.MyToolbar;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        MyToolbar.show(this, "Login" ,true);
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
