@@ -59,4 +59,42 @@
         tools:layout_editor_absoluteX="225dp"
         tools:layout_editor_absoluteY="565dp"
         tools:src="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="3"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="308dp" />
+
+    <SearchView
+        android:layout_width="198dp"
+        android:layout_height="141dp"
+        tools:layout_editor_absoluteX="212dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <WebView
+        android:layout_width="210dp"
+        android:layout_height="93dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="252dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
