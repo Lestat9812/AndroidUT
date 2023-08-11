@@ -86,15 +86,23 @@
         tools:layout_editor_absoluteX="170dp"
         tools:layout_editor_absoluteY="308dp" />
 
-    <SearchView
-        android:layout_width="198dp"
-        android:layout_height="141dp"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="214dp" />
-
     <WebView
         android:layout_width="210dp"
         android:layout_height="93dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="252dp" />
+        tools:layout_editor_absoluteY="252dp" >
+
+        <SearchView
+            android:layout_width="198dp"
+            android:layout_height="141dp"
+            android:layout_x="-2dp"
+            android:layout_y="227dp">
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="110dp"
+                android:layout_height="127dp" />
+        </SearchView>
+    </WebView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
