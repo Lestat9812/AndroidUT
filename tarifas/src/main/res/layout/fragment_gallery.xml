@@ -89,8 +89,8 @@
     <WebView
         android:layout_width="210dp"
         android:layout_height="93dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="252dp" >
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="252dp">
 
         <SearchView
             android:layout_width="198dp"
