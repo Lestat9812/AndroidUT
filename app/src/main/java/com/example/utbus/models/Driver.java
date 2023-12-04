@@ -5,11 +5,13 @@ public class Driver {
     String id;
     String name;
     String email;
+    String licencia;
 
-    public Driver(String id, String name, String email) {
+    public Driver(String id, String name, String email, String licencia) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.licencia=licencia;
     }
 
     public String getId() {
@@ -34,5 +36,13 @@ public class Driver {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getLicencia() {
+        return licencia;
+    }
+
+    public void setLicencia(String licencia) {
+        this.licencia = licencia;
     }
 }

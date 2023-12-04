@@ -25,7 +25,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBs97lvclJEx6qqrKnS2fOtQoqto-JF7to" />
+            android:value="@string/google_api_key" />
 
         <activity
             android:name=".Activities.driver.RegisterDriverActivity"
@@ -33,12 +33,12 @@
         <activity
             android:name=".Activities.LoginActivity"
             android:exported="false"
-            android:parentActivityName=".Activities.selecOptionAuthActivity" />
+            android:parentActivityName=".Activities.selectOptionAuthActivity" />
         <activity
             android:name=".Activities.client.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.selecOptionAuthActivity"
+            android:name=".Activities.selectOptionAuthActivity"
             android:exported="false"
             android:parentActivityName=".Activities.MainActivity" />
         <activity

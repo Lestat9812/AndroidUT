@@ -13,7 +13,7 @@ import com.example.utbus.Activities.client.RegisterActivity;
 import com.example.utbus.Activities.driver.RegisterDriverActivity;
 import com.example.utbus.R;
 
-public class selecOptionAuthActivity extends AppCompatActivity {
+public class selectOptionAuthActivity extends AppCompatActivity {
 
     Button mButtonGoToLogin;
 
@@ -50,17 +50,17 @@ public class selecOptionAuthActivity extends AppCompatActivity {
     }
 
    public void goToLogin (){
-        Intent intent = new Intent(selecOptionAuthActivity.this, LoginActivity.class);
+        Intent intent = new Intent(selectOptionAuthActivity.this, LoginActivity.class);
         startActivity(intent);
    }
     public void goToRegister (){
         String typeUser = mPref.getString("user", "");
         if (typeUser.equals("client")){
-            Intent intent = new Intent(selecOptionAuthActivity.this, RegisterActivity.class);
+            Intent intent = new Intent(selectOptionAuthActivity.this, RegisterActivity.class);
             startActivity(intent);
         }
         else {
-            Intent intent = new Intent(selecOptionAuthActivity.this, RegisterDriverActivity.class);
+            Intent intent = new Intent(selectOptionAuthActivity.this, RegisterDriverActivity.class);
             startActivity(intent);
         }
     }

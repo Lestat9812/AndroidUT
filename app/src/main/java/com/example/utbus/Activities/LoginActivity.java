@@ -78,14 +78,16 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, MapClientActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
+                                } else{
+                                    Intent intent = new Intent(LoginActivity.this, MapDriverActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
                                 }
-                                //Toast.makeText(LoginActivity.this, "El ingreso fue exitoso", Toast.LENGTH_SHORT).show();
+                             //   Toast.makeText(LoginActivity.this, "El ingreso fue exitoso", Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                Intent intent = new Intent(LoginActivity.this, MapDriverActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                                //Toast.makeText(LoginActivity.this, "El email o contraseña son incorrectos", Toast.LENGTH_SHORT).show();
+
+                                Toast.makeText(LoginActivity.this, "El email o contraseña son incorrectos", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

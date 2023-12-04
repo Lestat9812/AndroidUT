@@ -35,6 +35,7 @@ public class RegisterDriverActivity extends AppCompatActivity {
     TextInputEditText mTextInputEmail;
     TextInputEditText mTextInputName;
     TextInputEditText mTextInputPassword;
+    TextInputEditText mTextInputLicencia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class RegisterDriverActivity extends AppCompatActivity {
         mTextInputEmail = findViewById(R.id.textInputEmail);
         mTextInputName = findViewById(R.id.textInputName);
         mTextInputPassword = findViewById(R.id.textInputPassword);
+        mTextInputLicencia = findViewById(R.id.textInputLicencia);
+
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,10 +63,11 @@ public class RegisterDriverActivity extends AppCompatActivity {
         String name = mTextInputName.getText().toString();
         String email = mTextInputEmail.getText().toString();
         String password = mTextInputPassword.getText().toString();
+        String licencia = mTextInputLicencia.getText().toString();
 
-        if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()){
+        if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty() && !licencia.isEmpty()){
             if (password.length() >=6){
-                register(name, email, password);
+                register(name, email, password, licencia);
             }
             else {
                 Toast.makeText(this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
@@ -75,13 +79,13 @@ public class RegisterDriverActivity extends AppCompatActivity {
 
     }
 
-    void register (String name, String email, String password){
+    void register (String name, String email, String password, String licencia){
         mAuthProvider.register(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    Driver driver = new Driver(id, name, email);
+                    Driver driver = new Driver(id, name, email, licencia);
                     create(driver);
 
                 }
@@ -97,13 +101,13 @@ public class RegisterDriverActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    //Toast.makeText(RegisterDriverActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterDriverActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterDriverActivity.this, MapDriverActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(RegisterDriverActivity.this, "No se pudo crear el cliente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterDriverActivity.this, "No se pudo crear el usuario", Toast.LENGTH_SHORT).show();
                 }
             }
         });

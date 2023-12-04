@@ -81,6 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     Client client = new Client(id, name, email);
                     create(client);
+                    Toast.makeText(RegisterActivity.this, "hola " + client.getName(), Toast.LENGTH_SHORT).show();
 
                 }
                 else{
@@ -95,13 +96,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                if (task.isSuccessful()){
-                   //Toast.makeText(RegisterActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(RegisterActivity.this, "El registro fue exitoso", Toast.LENGTH_SHORT).show();
                    Intent intent = new Intent(RegisterActivity.this, MapClientActivity.class);
                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                    startActivity(intent);
                }
                else {
-                   Toast.makeText(RegisterActivity.this, "No se pudo crear el cliente", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(RegisterActivity.this, "No se pudo crear el usuario", Toast.LENGTH_SHORT).show();
                }
             }
         });
