@@ -27,6 +27,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.utbus.Activities.client.RegisterActivity;
+import com.example.utbus.providers.GeofireProvider;
 import com.google.android.gms.location.LocationRequest;
 
 import com.example.utbus.Activities.MainActivity;
@@ -47,12 +48,14 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private SupportMapFragment mMapFragment;
     private AuthProvider mAuthprovider;
+    private GeofireProvider mGeoFireProvider;
 
     private LocationRequest mLocationRequest;
     private FusedLocationProviderClient mFusedLocation;
@@ -61,6 +64,8 @@ public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCa
     private final static int SETTINGS_REQUEST_CODE = 2;
 
     private Marker mMarker;
+
+    private LatLng mCurrentLatLng;
 
     private Button mButtonConnect;
 
@@ -72,6 +77,7 @@ public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCa
             for (Location location : locationResult.getLocations()) {
                 if (getApplicationContext() != null) {
 
+                    mCurrentLatLng = new LatLng(location.getLatitude(),location.getLongitude());
                     if(mMarker != null){
                         mMarker.remove();
                     }
@@ -89,12 +95,20 @@ public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCa
                                     .zoom(17f)
                                     .build()
                     ));
+
+                    updateLocation();
                    // mMap.addMarker(new MarkerOptions().position(new LatLng(location.getLatitude(), location.getLongitude())));
 
                 }
             }
         }
     };
+
+    private void updateLocation() {
+        if(mAuthprovider.existsSession() && mCurrentLatLng != null) {
+            mGeoFireProvider.saveLocation(mAuthprovider.getId(),mCurrentLatLng);
+        }
+    }
 
 
     @Override
@@ -105,6 +119,7 @@ public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCa
         checkLocationPermissions();
 
         mAuthprovider = new AuthProvider();
+        mGeoFireProvider = new GeofireProvider();
 
         mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
 
@@ -219,10 +234,15 @@ public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCa
     }
 
     private void disconnect(){
-        mButtonConnect.setText("Conectarse");
-        isConnected=false;
         if (mFusedLocation!= null){
             mFusedLocation.removeLocationUpdates(mLocationCallback);
+        mButtonConnect.setText("Conectarse");
+        isConnected=false;
+        if(mAuthprovider.existsSession()){
+            mGeoFireProvider.removeLocation(mAuthprovider.getId());
+        }
+        }else{
+            Toast.makeText(this, "No se puede desconectar", Toast.LENGTH_SHORT).show();
         }
     }
     private void startLocation() {

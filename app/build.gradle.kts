@@ -48,6 +48,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.android.gms:play-services-location:16.0.0")
+    implementation("com.firebase:geofire-android:3.2.0")
 
 
 }
