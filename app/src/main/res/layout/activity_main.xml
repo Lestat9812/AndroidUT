@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/verde1"
+    android:background="@drawable/options"
     tools:context=".Activities.MainActivity">
 
-    <LinearLayout
+    <!--LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical" -->
 
-        <ImageView
+        <!--ImageView
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:src="@drawable/baseline_airport_shuttle_24"
             android:layout_marginTop="180dp"
             android:layout_gravity="center"
-            />
+            /-->
 
-        <TextView
+        <!--TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="UT Bus"
@@ -28,40 +29,42 @@
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:textSize="45dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"/-->
 
-        <LinearLayout
+        <!--LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
             android:layout_margin="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"-->
 
-            <Button
-                android:id="@+id/btnIAmDriver"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_button"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/white"
-                android:layout_marginRight="4dp"
-                android:text="SOY CONDUCTOR"/>
+    <Button
+        android:id="@+id/btnIAmDriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="120dp"
+        android:backgroundTint="#ededed"
+        android:text="Soy conductor"
+        android:textColor="#000000"
+        />
 
-            <Button
-                android:id="@+id/btnIAmStudent"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_button"
-                android:backgroundTint="@color/black"
-                android:layout_marginLeft="5dp"
-                android:text="SOY ESTUDIANTE"/>
+    <Button
+        android:id="@+id/btnIAmStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="120dp"
 
-        </LinearLayout>
+        android:backgroundTint="#ededed"
+        android:radius="40dp"
+        android:text="Soy estudiante"
+        android:textColor="#000000" />
+
+    <!--/LinearLayout>
 
 
-    </LinearLayout>
+</LinearLayout-->
  
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
